@@ -1,0 +1,49 @@
+image:
+  repository: your-registry.org/owncloud-qa
+  tag: "10.10"
+imagePullSecrets:
+  - name: your-registry-pull-secret
+
+owncloud:
+  adminPassword: change-this
+  adminUsername: change-this
+  allowUserToChangeDisplayName: false
+  apps:
+    install: "activity calendar contacts files_mediaviewer files_pdfviewer files_texteditor impersonate oauth2 templateeditor"
+    enable: "sciencemesh"
+  configExtra:
+    allow_user_to_change_mail_address: false
+  db:
+    host: your-db-host
+    name: your-db-name
+    username: your-db-user
+    password: your-db-password
+    type: pgsql
+  domain: your-efss-domain.org
+  enablePreviews: true
+  enabledPreviewProviders: "OC\\Preview\\PNG OC\\Preview\\JPEG"
+  integrityIgnoreMissingAppSignature: "sciencemesh"
+  log:
+    timezone: 'Europe/Prague'
+  lostPasswordLink: disabled
+  mail:
+    domain: your-efss-domain.org
+    fromAddress: change-this
+    smtp:
+      host: your-smtp-relay-host
+      mode: smtp
+      port: 25
+  redis:
+    enabled: true
+    host: your-redis-cluster-master
+  secret: change-this
+  session:
+    keepalive: true
+
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: true
+  owncloud:
+    storageClassName: your-storage-provider-class
