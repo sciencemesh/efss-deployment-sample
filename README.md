@@ -19,7 +19,7 @@ Helm
 ## Usage
 
 ```shell
-helm repo add owncloud <https://owncloud-docker.github.io/helm-charts>
+helm repo add owncloud https://owncloud-docker.github.io/helm-charts
 helm repo update
 ```
 
