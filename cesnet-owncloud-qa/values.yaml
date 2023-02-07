@@ -1,6 +1,6 @@
 image:
   repository: your-registry.org/owncloud-qa
-  tag: "10.10"
+  tag: '10.10'
 imagePullSecrets:
   - name: your-registry-pull-secret
 
@@ -9,8 +9,8 @@ owncloud:
   adminUsername: change-this
   allowUserToChangeDisplayName: false
   apps:
-    install: "activity calendar contacts files_mediaviewer files_pdfviewer files_texteditor impersonate oauth2 templateeditor"
-    enable: "sciencemesh"
+    install: 'activity calendar contacts files_mediaviewer files_pdfviewer files_texteditor impersonate oauth2 templateeditor'
+    enable: 'sciencemesh'
   configExtra:
     allow_user_to_change_mail_address: false
   db:
@@ -21,8 +21,8 @@ owncloud:
     type: pgsql
   domain: your-efss-domain.org
   enablePreviews: true
-  enabledPreviewProviders: "OC\\Preview\\PNG OC\\Preview\\JPEG"
-  integrityIgnoreMissingAppSignature: "sciencemesh"
+  enabledPreviewProviders: 'OC\\Preview\\PNG,OC\\Preview\\JPEG'
+  integrityIgnoreMissingAppSignature: 'sciencemesh'
   log:
     timezone: 'Europe/Prague'
   lostPasswordLink: disabled
@@ -39,6 +39,7 @@ owncloud:
   secret: change-this
   session:
     keepalive: true
+  sharingManagerFactory: 'OCA\\ScienceMesh\\ScienceMeshProviderFactory'
 
 service:
   type: ClusterIP
